@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an entry</title>
+</head>
+<body>
+    <h1>Edit Entry</h1>
+    <form action="/entries/<%=entry._id %>?_method=PUT" method="post">
+        <label for="title">Title:</label>
+        <input value="<%=entry.title %>" name="title" id="titel" type="text">
+        <br>
+        <br>
+        <label for="entryBody">The Entry Body:</label>
+        <input value="<%=entry.entryBody %>" name="entryBody" id="entryBody" type="text">
+        <br>
+        <br>
+        <label for="isPublic">Are they Public></label>
+        <input <% if(entry.isPublic){ %> checked <% } %> name="isPublic" id="isPublic" type="checkbox">
+        <br>
+        <br>
+        <button>Update</button>
+    </form>
+</body>
+</html>
