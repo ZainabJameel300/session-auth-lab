@@ -41,5 +41,10 @@ router.put('/:entryid', async (req,res)=>{
     res.redirect('/entries')
 })
 
+router.delete('/:entryId/delete', async(req,res)=>{
+   await Entry.findByIdAndDelete(req.params.entryId)
+    res.redirect('/entries')
+})
+
 
 module.exports = router;
